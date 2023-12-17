@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\tomas\OneDrive\Pulpit\FriendsOrganizerCourse\FriendOrganizer\FriendOrganizer.UI\obj\Debug\
+C:\Users\tomas\OneDrive\Pulpit\FriendsOrganizerCourse\start\FriendOrganizer\FriendOrganizer.UI\obj\Debug\
 FriendOrganizer.UI
 none
 false
 DEBUG;TRACE
-C:\Users\tomas\OneDrive\Pulpit\FriendsOrganizerCourse\FriendOrganizer\FriendOrganizer.UI\App.xaml
-31045655424
+C:\Users\tomas\OneDrive\Pulpit\FriendsOrganizerCourse\start\FriendOrganizer\FriendOrganizer.UI\App.xaml
+5-1030119973
 
-18-1707061750
-28-1748283454
-MainWindow.xaml;View\FriendDetailView.xaml;View\NavigationView.xaml;
+50-1590867802
+341190428944
+MainWindow.xaml;View\FriendDetailView.xaml;View\MeetingDetailView.xaml;View\NavigationView.xaml;View\ProgrammingLanguageView.xaml;
 
 False
 

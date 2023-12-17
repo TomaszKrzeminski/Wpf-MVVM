@@ -60,6 +60,22 @@
     <Compile Include="Migrations\202312021604116_initial2.designer.cs">
       <DependentUpon>202312021604116_initial2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312091706342_Programming Languages.cs" />
+    <Compile Include="Migrations\202312091706342_Programming Languages.designer.cs">
+      <DependentUpon>202312091706342_Programming Languages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312092019024_Phone numbers.cs" />
+    <Compile Include="Migrations\202312092019024_Phone numbers.designer.cs">
+      <DependentUpon>202312092019024_Phone numbers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312101253456_Meeting.cs" />
+    <Compile Include="Migrations\202312101253456_Meeting.designer.cs">
+      <DependentUpon>202312101253456_Meeting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312171520225_Concurency.cs" />
+    <Compile Include="Migrations\202312171520225_Concurency.designer.cs">
+      <DependentUpon>202312171520225_Concurency.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -79,6 +95,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312021604116_initial2.resx">
       <DependentUpon>202312021604116_initial2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312091706342_Programming Languages.resx">
+      <DependentUpon>202312091706342_Programming Languages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312092019024_Phone numbers.resx">
+      <DependentUpon>202312092019024_Phone numbers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312101253456_Meeting.resx">
+      <DependentUpon>202312101253456_Meeting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312171520225_Concurency.resx">
+      <DependentUpon>202312171520225_Concurency.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

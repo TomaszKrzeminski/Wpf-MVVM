@@ -5,17 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FriendOrganizer.UI"
         xmlns:view="clr-namespace:FriendOrganizer.UI.View" 
+        xmlns:viewModel="clr-namespace:FriendOrganizer.UI.ViewModel" 
         mc:Ignorable="d"
-        Title="FriendOrganizer" FontSize="20" Height="450" Width="800">
+        Title="FriendOrganizer" FontSize="20" Height="700" Width="1000" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModel:FriendDetailViewModel}">
+            <view:FriendDetailView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:MeetingDetailViewModel}">
+            <view:MeetingDetailView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:ProgrammingLanguageDetailViewModel}">
+            <view:ProgrammingLanguageView/>
+        </DataTemplate>
+
+    </Window.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200">
-                
+            <ColumnDefinition Width="200">                
             </ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <view:NavigationView DataContext="{Binding NavigationViewModel}"/>
-        <view:FriendDetailView Grid.Column="1"  DataContext="{Binding FriendDetailViewModel}"/>
+        <Menu Grid.ColumnSpan="2" FontSize="20" Grid.Row="0">
+            <MenuItem Header="Create">
+                <MenuItem Header="New Friend" Command="{Binding CreateNewDetailCommand}" CommandParameter="{x:Type viewModel:FriendDetailViewModel}"></MenuItem>           
+                <MenuItem Header="New Meeting" Command="{Binding CreateNewDetailCommand}" CommandParameter="{x:Type viewModel:MeetingDetailViewModel}"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Programming Language" Command="{Binding OpenSingleDetailViewModel}" CommandParameter="{x:Type viewModel:ProgrammingLanguageDetailViewModel}"></MenuItem>
+
+            </MenuItem>
+            
+        </Menu>
+        <view:NavigationView Grid.Row="1" DataContext="{Binding NavigationViewModel}"/>
+        <TabControl Grid.Row="1" Grid.Column="1"  ItemsSource="{Binding DetailViewModels}"  SelectedItem="{Binding SelectedDetailViewModel,Mode=TwoWay}">
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Title}"></TextBlock>
+                        <TextBlock Text="*" Visibility="{Binding HasChanges,Converter={StaticResource booleanToVisibilityConverter} }"></TextBlock>
+                        <Button Command="{Binding CloseDetailViewCommand}" VerticalContentAlignment="Top" Margin="2" Content="x" FontSize="20"></Button>
+                    </StackPanel>
+                </DataTemplate>   
+            </TabControl.ItemTemplate>
+            
+        </TabControl>
        
     </Grid>
 </Window>
